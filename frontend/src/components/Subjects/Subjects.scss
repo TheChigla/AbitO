@@ -1,0 +1,100 @@
+@import '../../config/variables';
+
+.subjects-container {
+  padding-bottom: 80px;
+
+  .subjects__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, calc(25% - 15px));
+    grid-gap: 20px;
+
+    .single-subject {
+      cursor: pointer;
+      width: 100%;
+      border-radius: 5px;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: 0.25s;
+
+      .single-subject__title {
+        color: #fff;
+        font-size: 1.8rem;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+
+      &:hover {
+        transform: translateY(-3%);
+      }
+    }
+  }
+}
+
+.add-subject {
+  display: flex;
+  justify-content: center;
+
+  .add-subject__title {
+    text-align: center;
+    margin-bottom: 15px;
+
+    .title-divider {
+      margin-top: 10px !important;
+    }
+  }
+
+  .payment-counter {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    color: #2c3e50;
+  }
+
+  .add-form__group {
+    margin-bottom: 10px;
+
+    input[type='number'],
+    select {
+      width: 510px;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid $borderColor;
+      padding-left: 10px;
+      outline: none;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 769px) {
+  .container h2 {
+    padding-left: 15px;
+  }
+
+  .subjects-container {
+    .subjects__wrapper {
+      display: block;
+      padding: 0 15px;
+
+      .single-subject {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .add-form__group {
+    margin-bottom: 10px;
+
+    input[type='number'],
+    select {
+      width: 100% !important;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@import '../../config/variables';
+
+.auth-form {
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 80px;
+
+  .auth-form__title {
+    display: flex;
+    justify-content: center;
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+
+  .auth-form__content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .auth-form__group {
+      margin-bottom: 10px;
+
+      label {
+        color: $textColor;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      input[type='email'],
+      input[type='password'],
+      input[type='file'] {
+        width: 510px;
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid $borderColor;
+        padding-left: 10px;
+        outline: none;
+        font-size: 0.9rem;
+
+        &[type='file'] {
+          margin-top: 5px;
+          height: 100%;
+          padding: 10px 5px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .auth-form__flex {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+
+      input {
+        height: 40px;
+        border-radius: 5px;
+        border: 1px solid $borderColor;
+        padding-left: 10px;
+        outline: none;
+        font-size: 0.9rem;
+        width: 250px;
+      }
+
+      &.full input {
+        width: 400px;
+      }
+    }
+  }
+
+  .auth-link {
+    margin-top: 15px;
+    color: $textColor;
+    font-size: 0.9rem;
+
+    a {
+      color: $btnColor;
+      text-decoration: none;
+    }
+  }
+}
+
+/* Resposnive */
+@media (max-width: 769px) {
+  .auth-form {
+    .auth-form__content {
+      .auth-form__group {
+        input {
+          width: 100% !important;
+        }
+      }
+
+      .auth-form__flex {
+        display: block;
+
+        &.full {
+          display: flex;
+
+          input {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
