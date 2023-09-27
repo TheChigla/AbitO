@@ -60,7 +60,7 @@ const Register = ({ API_URL, UserLoggedContext }) => {
           console.log(err)
           setAlertType('error')
           setShowAlert(true)
-          setAlertContent(err.response.data.err)
+          if(err.response && err.response.data.err) setAlertContent(err.response.data.err)
         })
     }
   }
